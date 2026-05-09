@@ -11,5 +11,5 @@ RUN dotnet publish "UretaLibraryNowAPI/UretaLibraryNowAPI.csproj" -c Release -o 
 
 FROM base AS final
 WORKDIR /app
-COPY --from=build /app/out
+COPY --from=build /app/out .
 ENTRYPOINT ["dotnet","UretaLibraryNowAPI.dll"]
